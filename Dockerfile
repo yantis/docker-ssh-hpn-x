@@ -7,8 +7,8 @@
 FROM yantis/archlinux-small-ssh-hpn
 MAINTAINER Jonathan Yantis <yantis@yantis.net>
 
-# Update and force a refresh of all package lists even if they appear up to date.
-RUN pacman -Syyu --noconfirm && \
+# Don't update
+RUN pacman -Syy --noconfirm && \
 
     # Install X related stuff and some fonts.
     pacman --noconfirm -S xterm xorg-xclock xorg-xcalc xorg-xauth xorg-xeyes ttf-droid && \
